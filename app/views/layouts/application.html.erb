@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskApp1</title>
+    <title>TaskApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,12 @@
   </head>
 
   <body>
+   <header>
+    <h1>Ruby on Rails スケジュール管理アプリ</h1>
+   </header>
     <%= yield %>
+   <footer>
+    <h1>現在時刻：<%= DateTime.now.strftime("%Y年%m月%d日 %H時%M分") %>　全てのスケジュール：<%= Task.count %>件</h1>
+   </footer>
   </body>
 </html>
